@@ -161,7 +161,7 @@
         <div class="p-10 lg:w-1/3 bg-yellow flex justify-center items-center">
             <div class="bg-white rounded-lg shadow-lg p-5 flex flex-col items-center justify-center space-y-5">
                 <i class="fa fa-passport text-6xl text-center text-brown"></i>
-                <h1 class="font-bold text-3xl">Lost your passport???</h1>
+                <h1 class="font-bold text-3xl text-center">Lost your passport???</h1>
                 <p class="text-sm">You can complain, We help you retrive it.</p>
                 <a href="{{route('register')}}">
                     <button class="bg-brown px-4 py-3 text-white rounded-lg shadow-lg">Get Started <i class="ml-3 fa fa-sign"></i></button>
