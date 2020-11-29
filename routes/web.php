@@ -21,11 +21,14 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('user.register');
 })->name('user.register');
-user.login');
 
-Route::get('/home', function () {
-    retu
 Route::get('/login', function () {
     return view('user.login');
-})->name('rn view('user.home');
+})->name('user.login');
+
+Route::get('/home', function () {
+    return view('user.home');
 })->name('user.home');
+
+
+
