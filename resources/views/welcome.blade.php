@@ -14,12 +14,12 @@
                 <i class="fa fa-window-close text-brown text-4xl cursor-pointer" id="menu-close"></i>
             </div>
             <div class="flex flex-col justify-center items-center space-y-5 p-10">
-                <a href="{{route('register')}}" class="w-full">
+                <a href="{{route('user.register')}}" class="w-full">
                     <div class="bg-white hover:bg-gray-200 py-4 px-8 w-full border-l-8 border-black">
                         <h1 class="text-5xl">Sign up</h1>
                     </div>
                 </a>
-                <a href="" class="w-full">
+                <a href="{{route('user.login')}}" class="w-full">
                     <div class="bg-white hover:bg-gray-200 py-4 px-8 w-full border-l-8 border-black">
                         <h1 class="text-5xl">Log in</h1>
                     </div>
@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('register')}}" class="border-2 border-white py-2 px-3 rounded-lg hover:bg-white hover:text-black">Sign in</a>
+                <a href="{{route('user.register')}}" class="border-2 border-white py-2 px-3 rounded-lg hover:bg-white hover:text-black">Sign in</a>
             </li>
         </ul>
     </div>
@@ -51,7 +51,7 @@
             <div class="flex flex-col justify-center items-center lg:w-2/3 p-10">
                 <h1 class="text-xl sm:text-3xl text-yellow"><span class="text-4xl md:text-6xl font-bold text-yellow">Kanyakumari <br> </span> Welcomes you</h1>
                 <p>Explore the real kanyakumari here.. </p>
-                    <a href="{{route('register')}}">
+                    <a href="{{route('user.register')}}">
                         <button class="text-2xl px-4 py-2 rounded-lg shadow-lg mt-5 bg-white text-black w-64 hover:bg-gray-800 hover:text-white">Get Started</button>
                     </a>
                 <div class="mt-10 h-2 w-32 bg-brown"></div>
@@ -121,7 +121,7 @@
             </div>
             <div class="bg-white rounded-lg shadow-lg w-full flex flex-col justify-center items-center overflow-hidden p-10 bg-brown">
                 <h1 class="text-3xl text-yellow font-bold text-center">Sign in to see more tourist places..</h1>
-                <a href="{{route('register')}}">
+                <a href="{{route('user.register')}}">
                     <button class="bg-white py-2 mt-5 px-5 text-brown">Get Started</button>
                 </a>
             </div>
@@ -165,7 +165,7 @@
                 <i class="fa fa-passport text-6xl text-center text-brown"></i>
                 <h1 class="font-bold text-3xl text-center">Lost your passport???</h1>
                 <p class="text-sm">You can complain, We help you retrive it.</p>
-                <a href="{{route('register')}}">
+                <a href="{{route('user.register')}}">
                     <button class="bg-brown px-4 py-3 text-white rounded-lg shadow-lg">Get Started <i class="ml-3 fa fa-sign"></i></button>
                 </a>
             </div>
@@ -184,7 +184,7 @@
                     <img class="h-10 w-10 border-2 shadow-lg border-black object-cover rounded-full" src="images/vinith.jpg" alt="">
                     <img class="h-10 w-10 border-2 shadow-lg border-black object-cover rounded-full" src="images/kk.jpeg" alt="">
                 </div>
-                <a href="{{route('register')}}">
+                <a href="{{route('user.register')}}">
                     <button class="bg-brown px-4 py-3 text-white rounded-lg shadow-lg">Get Started <i class="ml-3 fa fa-sign"></i></button>
                 </a>
             </div>
@@ -198,7 +198,7 @@
                 <i class="fa fa-biking text-6xl text-center text-brown"></i>
                 <h1 class="font-bold text-3xl">Lost your Job???</h1>
                 <p class="text-sm">We help you get hired. You can see the latest job post and apply</p>
-                <a href="{{route('register')}}">
+                <a href="{{route('user.register')}}">
                     <button class="bg-brown px-4 py-3 text-white rounded-lg shadow-lg">Get Started <i class="ml-3 fa fa-sign"></i></button>
                 </a>
             </div>
@@ -209,7 +209,7 @@
                 <i class="fa fa-shopping-bag text-6xl text-center text-brown"></i>
                 <h1 class="font-bold text-3xl">Track the best shops around you </h1>
                 <p class="text-sm">We help you get you to best nearest shops</p>
-                <a href="{{route('register')}}">
+                <a href="{{route('user.register')}}">
                     <button class="bg-brown px-4 py-3 text-white rounded-lg shadow-lg">Get Started <i class="ml-3 fa fa-sign"></i></button>
                 </a>
             </div>

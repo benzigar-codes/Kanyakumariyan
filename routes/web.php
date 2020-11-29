@@ -11,10 +11,20 @@
 |
 */
 
+// Users Route
+
 Route::get('/', function () {
     return view('welcome');
 })->name('landing');
 
 Route::get('/register', function () {
-    return view('register');
-})->name('register');
+    return view('user.register');
+})->name('user.register');
+
+Route::get('/login', function () {
+    return view('user.login');
+})->name('user.login');
+
+Route::get('/home', function () {
+    return view('user.home');
+})->name('user.home');
