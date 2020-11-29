@@ -31,4 +31,11 @@ Route::get('/home', function () {
 })->name('user.home');
 
 
+// Admin Route
+
+Route::get('/admin561890', function () {
+    return view('admin.home');
+})->name('admin.home');
+
+
 
