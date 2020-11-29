@@ -51,7 +51,9 @@
             <div class="flex flex-col justify-center items-center lg:w-2/3 p-10">
                 <h1 class="text-xl sm:text-3xl text-yellow"><span class="text-4xl md:text-6xl font-bold text-yellow">Kanyakumari <br> </span> Welcomes you</h1>
                 <p>Explore the real kanyakumari here.. </p>
-                <button class="text-2xl px-4 py-2 rounded-lg shadow-lg mt-5 bg-white text-black w-64 hover:bg-gray-800 hover:text-white">Get Started</button>
+                    <a href="{{route('register')}}">
+                        <button class="text-2xl px-4 py-2 rounded-lg shadow-lg mt-5 bg-white text-black w-64 hover:bg-gray-800 hover:text-white">Get Started</button>
+                    </a>
                 <div class="mt-10 h-2 w-32 bg-brown"></div>
             </div>
             <img src="images/kk.jpeg" class="hidden lg:block bg-white lg:min-h-screen w-1/3 object-cover">
