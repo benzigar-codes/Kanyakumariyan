@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('phone')->nullable();
             $table->string('gender');
             $table->string('privacy')->default('public');
+            $table->string('hired')->default('yes');
+            $table->string('profession')->nullable();
             $table->string('image')->default('avatar');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
