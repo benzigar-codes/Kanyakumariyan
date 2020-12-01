@@ -34,6 +34,13 @@
         @yield('style')
     </head>
     <body>
+        <div class="fixed bottom-0 right-0 hidden lg:block">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </div>
+        </div>
         <div class="min-h-screen flex">
         <div class="hidden lg:block lg:w-1/5 bg-green-700">
             <div class="font-bold text-xl bg-green-900 text-white w-full py-4 px-3 flex items-center border-b-4 border-green-500 mb-2">
@@ -43,7 +50,7 @@
                 <p>Kanyakumariyan</p>
             </div>
             {{-- Lists --}}
-            <div class="flex flex-col" style="height: 100%;">
+            <div class="flex flex-col">
                 <a href="{{route('admin.home')}}" class="p-4 pl-5 flex items-center hover:bg-green-900 @yield('home')">
                     <div class="bg-white h-10 w-10 rounded-full text-green-600 p-2 mr-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

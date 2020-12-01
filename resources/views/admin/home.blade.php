@@ -1,6 +1,6 @@
 @extends('template.admin')
 
-@section('title','Admin')
+@section('title','Admin | Home')
 
 @section('home','border-l-4 border-white bg-green-800')
 
