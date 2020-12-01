@@ -37,5 +37,22 @@ Route::get('/admin561890', function () {
     return view('admin.home');
 })->name('admin.home');
 
+Route::get('/admin561890/blogs', function () {
+    return view('admin.blogs');
+})->name('admin.blogs');
 
+Route::get('/admin561890/events', function () {
+    return view('admin.events');
+})->name('admin.events');
 
+Route::get('/admin561890/messages', function () {
+    return view('admin.messages');
+})->name('admin.messages');
+
+Route::get('/admin561890/places', function () {
+    return view('admin.places');
+})->name('admin.places');
+
+Route::get('/admin561890/reports', function () {
+    return view('admin.reports');
+})->name('admin.reports');
