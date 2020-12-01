@@ -5,7 +5,10 @@
 @section('content')
     {{-- mobile nav --}}
     <div class="flex md:hidden justify-between p-5 items-center md:px-10 bg-brown text-white fixed top-0 w-full z-8 border-4 border-white border-bottom-2" id="menu-toggler">
-        <h1 class="text-white font-bold text-2xl">Kanyakumariyan</h1> 
+        <h1 class="text-white font-bold text-2xl flex items-center">
+            <svg class="h-10 w-10 bg-white text-brown rounded-full mr-3 p-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>Kanyakumariyan</h1> 
         <i class="fa fa-bars text-3xl cursor-pointer"></i>
     </div>
     <div class="fixed hidden inset-0 z-10 bg-yellow w-full p-4 " id="menu">
@@ -32,7 +35,11 @@
     </div>
     {{-- navbar --}}
     <div class="hidden md:flex justify-between p-5 items-center md:px-10 bg-brown text-white fixed top-0 w-full z-8 border-4 border-white border-bottom-2">
-        <h1 class="text-white font-bold text-2xl">Kanyakumariyan</h1> 
+        <h1 class="text-white font-bold text-2xl flex items-center">
+            <svg class="h-10 w-10 bg-white text-brown rounded-full mr-3 p-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+        Kanyakumariyan</h1> 
         <ul class="flex space-x-4 items-center">
             <li>
                 <a href="" class="bg-white flex items-center text-brown py-2 px-3 rounded-lg hover:bg-gray-200">
