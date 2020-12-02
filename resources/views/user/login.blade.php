@@ -1,6 +1,6 @@
 @extends('template.default')
 
-@section('title','Sign up')
+@section('title','Log up')
 
 @section('content')
     <div class="min-h-screen flex justify-center items-center bg-gray-500">

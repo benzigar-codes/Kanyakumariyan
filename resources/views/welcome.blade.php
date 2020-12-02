@@ -42,13 +42,13 @@
         Kanyakumariyan</h1> 
         <ul class="flex space-x-4 items-center">
             <li>
-                <a href="" class="bg-white flex items-center text-brown py-2 px-3 rounded-lg hover:bg-gray-200">
+                <a href="{{route('user.login')}}" class="bg-white flex items-center text-brown py-2 px-3 rounded-lg hover:bg-gray-200">
                     <img src="svg/login.svg" class="h-5 w-5 text-green-700 mr-2" alt="">
                     Log in
                 </a>
             </li>
             <li>
-                <a href="{{route('user.register')}}" class="border-2 border-white py-2 px-3 rounded-lg hover:bg-white hover:text-black">Sign in</a>
+                <a href="{{route('user.register')}}" class="border-2 border-white py-2 px-3 rounded-lg hover:bg-white hover:text-black">Sign up</a>
             </li>
         </ul>
     </div>
