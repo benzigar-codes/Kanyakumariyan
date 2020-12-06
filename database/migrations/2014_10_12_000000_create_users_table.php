@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->string('gender');
+            $table->integer('status')->default(1);
             $table->string('privacy')->default('public');
             $table->string('hired')->default('yes');
             $table->string('profession')->nullable();

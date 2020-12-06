@@ -13,6 +13,31 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/users',function ()
+{
+	return \App\User::all();
+});
+
+Route::get('/posts',function ()
+{
+	return \App\Post::all();
+});
+
+Route::get('/events',function ()
+{
+	return \App\Event::all();
+});
+
+Route::get('/shops',function ()
+{
+	return \App\Shop::all();
+});
+
+Route::get('/guides',function ()
+{
+	return \App\Guide::all();
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
