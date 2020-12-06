@@ -101,7 +101,7 @@
                 </a>
             </div>
         </div>
-        <div class="w-full lg:w-4/5 bg-gray-200">
+        <div class="w-full lg:w-4/5 bg-gray-200 relative">
             @yield('content')
         </div>
     </div>
