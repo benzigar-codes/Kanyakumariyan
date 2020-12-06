@@ -17,7 +17,7 @@ class CreateGuidesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('blog');
-            $table->integer('guide_likes_id');
+            $table->unsignedBigInteger('guide_likes_id');
             $table->timestamps();
         });
     }
