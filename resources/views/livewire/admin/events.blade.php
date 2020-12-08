@@ -22,12 +22,11 @@
                     </svg>
                 </button>
             </div>
-            <textarea name="addBlog"></textarea>
             <button class="mt-4 border-4 border-green-800 px-4 py-2 hover:bg-green-900 hover:border-0 outline-none hover:text-white focus:outline-none">Publish</button>
         </form>
     </div>
     <div>
-        {{-- Blog heading --}}
+        {{-- Event heading --}}
         <div class="p-4 bg-white m-4 shadow-lg">
             <div class="flex justify-between">
                 <h1 class="font-bold text-2xl flex items-center">
@@ -93,9 +92,5 @@
             </div> 
         </div>
         <script src="{{asset('js/alpine.min.js')}}"></script>
-        <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
-        <script>
-            CKEDITOR.replace( 'addBlog' );
-        </script>
     </div>
 </div>
