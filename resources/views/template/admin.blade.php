@@ -31,6 +31,7 @@
                 color: #371757;
             }
         </style>
+        @livewireStyles
         @yield('style')
     </head>
     <body>
@@ -105,7 +106,8 @@
             @yield('content')
         </div>
     </div>
-        <script src="js/jquery.js"></script>
-        @yield('script')
+        @livewireScripts
+        <script src="{{asset('js/jquery.js')}}"></script>
+        @yield('scripts')
     </body>
 </html>

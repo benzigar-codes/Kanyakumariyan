@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 
 // Users Route
 
@@ -46,3 +48,32 @@ Route::get('/admin561890/places', function () {
 Route::get('/admin561890/reports', function () {
     return view('admin.reports');
 })->name('admin.reports');
+
+Route::get('/admin561890/blogs/edit/{id}', function ($id) {
+    $blog=\App\Guide::find($id);
+    return view('admin.blogs-edit',[
+        'blog' => $blog
+    ]);
+})->name('admin.blogs.edit');
+
+Route::post('/admin561890/blogs/edit', function (Request $req)
+{
+    if($req->has('id') && $req->title != '' && $req->blog != ''){
+            $blog = \App\Guide::find($req->id);
+            $blog->title=$req->title;
+            $blog->blog=$req->blog;
+            $blog->save();
+            return redirect()->route('admin.blogs');
+        }
+})->name('admin.blogs.edit');
+
+Route::post('/admin561890/blogs/create', function (Request $req)
+{
+    if($req->has('addTitle') && $req->addTitle != '' && $req->addBlog != ''){
+            $blog = new \App\Guide;
+            $blog->title=$req->addTitle;
+            $blog->blog=$req->addBlog;
+            $blog->save();
+            return redirect()->route('admin.blogs');
+        }
+})->name('admin.blogs.create');

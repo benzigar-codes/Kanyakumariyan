@@ -16,8 +16,7 @@ class CreateGuidesTable extends Migration
         Schema::create('guides', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('blog');
-            $table->unsignedBigInteger('guide_likes_id');
+            $table->text('blog');
             $table->timestamps();
         });
     }
