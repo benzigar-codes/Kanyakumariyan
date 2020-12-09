@@ -132,41 +132,41 @@
         {{-- All Blogs --}}
         <div class="p-4 m-4">
             <div class="flex flex-wrap bg-white p-3">
-            	 <div class="w-1/5 text-center p-2">
+            	 <div class="w-1/6 text-center p-2">
             	 	<h1 class="font-bold text-md">SI.NO</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2">
+            	 <div class="w-1/6 text-center p-2">
             	 	<h1 class="font-bold text-md">Event Name</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2">
+            	 <div class="w-1/6 text-center p-2">
             	 	<h1 class="font-bold text-md">Location</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2">
+            	 <div class="w-1/6 text-center p-2">
             	 	<h1 class="font-bold text-md">Date</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2">
+            	 <div class="w-1/6 text-center p-2">
             	 	<h1 class="font-bold text-md">Pincode</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2">
+            	 <div class="w-1/6 text-center p-2">
             	 	<h1 class="font-bold text-md">Action</h1>
             	 </div>
             	 @foreach($events as $event)
-            	 <div class="w-1/5 text-center p-2 border-t-2 border-grey-400">
+            	 <div class="w-1/6 text-center p-2 border-t-2 border-grey-400">
             	 	<h1 class="text-md">{{$loop->index + 1}}</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2 border-t-2 border-grey-400">
+            	 <div class="w-1/6 text-center p-2 border-t-2 border-grey-400">
             	 	<h1 class="text-md">{{$event->title}}</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2 border-t-2 border-grey-400">
+            	 <div class="w-1/6 text-center p-2 border-t-2 border-grey-400">
             	 	<h1 class="text-md">{{$event->location}}</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2 border-t-2 border-grey-400">
+            	 <div class="w-1/6 text-center p-2 border-t-2 border-grey-400">
             	 	<h1 class="text-md">{{\Carbon\Carbon::parse($event->date)->toFormattedDateString()}}</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2 border-t-2 border-grey-400">
+            	 <div class="w-1/6 text-center p-2 border-t-2 border-grey-400">
             	 	<h1 class="text-md">{{$event->pincode}}</h1>
             	 </div>
-            	 <div class="w-1/5 text-center p-2 border-t-2 border-grey-400 flex">
+            	 <div class="w-1/6 text-center p-2 border-t-2 border-grey-400 flex">
             	 	
             	 </div>
             	 @endforeach

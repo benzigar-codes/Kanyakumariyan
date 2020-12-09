@@ -56,9 +56,10 @@ class Events extends Component
 	{
 		
 	}
-	public function deleteEvent()
+	public function deleteEvent($id)
 	{
-			
+		$event = \App\Event::find($id);
+		$event->delete();
 	}
 	public function nextStep()
 	{
