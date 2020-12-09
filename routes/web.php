@@ -78,3 +78,7 @@ Route::post('/admin561890/blogs/create', function (Request $req)
             return redirect()->route('admin.blogs');
         }
 })->name('admin.blogs.create');
+
+Route::get('/testing',function (){
+    return \App\Event::paginate(2);   
+});
