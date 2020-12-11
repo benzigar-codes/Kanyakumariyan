@@ -7,16 +7,25 @@ use Livewire\WithPagination;
 
 class Events extends Component
 {
-	public $step;
-	public $add;
+	public $search;
+	public $orderBy,$order;
+	public $step,$editStep;
+	public $add,$edit;
+	public $editId;
 	public $message;
 	public $addTitle,$addDesc,$addDate,$addLocation,$addGoogle,$addPincode;
+	public $editTitle,$editDesc,$editDate,$editLocation,$editGoogle,$editPincode;
 	use WithPagination;
 	public function mount()
 	{
 		$this->add=false;
+		$this->edit=false;
 		$this->message = '';
 		$this->step=1;
+		$this->editStep=1;
+		$this->search='';
+		$this->orderBy='id';
+		$this->order='desc';
 	}
 	public function showAdd()
 	{
@@ -24,7 +33,25 @@ class Events extends Component
 	}
 	public function hideAdd()
 	{
+		$this->step=1;
 		$this->add=false;
+	}
+	public function hideEdit()
+	{
+		$this->editStep=1;
+		$this->edit=false;
+	}
+	public function showEdit($id)
+	{
+		$event=\App\Event::find($id);
+		$this->editId=$event->id;
+		$this->editTitle=$event->title;
+		$this->editPincode=$event->pincode;
+		$this->editGoogle=$event->google_map;
+		$this->editLocation=$event->location;
+		$this->editDate=$event->date;
+		$this->editDesc=$event->description;
+		$this->edit=true;
 	}
 	public function addEvent()
 	{
@@ -71,15 +98,37 @@ class Events extends Component
 		}
 		$this->step++;
 	}
-	public function prevStep()
+	public function nextEditStep()
 	{
 		$this->message = '';
-		$this->step--;
+		if($this->editTitle == '' || $this->editDesc == '')
+		{
+			$this->message = "Enter the required fields";
+			return;
+		}
+		$this->editStep++;
+	}
+	public function prevEditStep()
+	{
+		$this->message = '';
+		$this->editStep--;
 	}
     public function render()
     {
-        return view('livewire.admin.events',[
-        	'events' => \App\Event::paginate(10)
-        ]);
+    	if($this->search != '')
+	        return view('livewire.admin.events',[
+	        	'events' => \App\Event::
+	        	where('title',"like","%".$this->search."%")
+	        	->orWhere('id',$this->search)
+	        	->orWhere('location',"like","%".$this->search."%")
+	        	->orWhere('date',"like","%".$this->search."%")
+	        	->orWhere('pincode',$this->search)
+	        	->orderBy($this->orderBy,$this->order)
+	        	->paginate(5)
+	        ]);
+	    else
+	    	return view('livewire.admin.events',[
+	        	'events' => \App\Event::orderBy($this->orderBy,$this->order)->paginate(5)
+	        ]);
     }
 }
