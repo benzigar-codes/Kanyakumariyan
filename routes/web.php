@@ -26,29 +26,12 @@ Route::get('/home', function () {
 
 // Admin Route
 
-Route::get('/admin561890', function () {
-    return view('admin.home');
-})->name('admin.home');
-
-Route::get('/admin561890/blogs', function () {
-    return view('admin.blogs');
-})->name('admin.blogs');
-
-Route::get('/admin561890/events', function () {
-    return view('admin.events');
-})->name('admin.events');
-
-Route::get('/admin561890/messages', function () {
-    return view('admin.messages');
-})->name('admin.messages');
-
-Route::get('/admin561890/places', function () {
-    return view('admin.places');
-})->name('admin.places');
-
-Route::get('/admin561890/reports', function () {
-    return view('admin.reports');
-})->name('admin.reports');
+Route::view('/admin561890','admin.home')->name('admin.home');
+Route::view('/admin561890/blogs', 'admin.blogs')->name('admin.blogs');
+Route::view('/admin561890/events', 'admin.events')->name('admin.events');
+Route::view('/admin561890/messages', 'admin.messages')->name('admin.messages');
+Route::view('/admin561890/places', 'admin.places')->name('admin.places');
+Route::view('/admin561890/reports', 'admin.reports')->name('admin.reports');
 
 Route::get('/admin561890/blogs/edit/{id}', function ($id) {
     $blog=\App\Guide::find($id);
@@ -78,7 +61,3 @@ Route::post('/admin561890/blogs/create', function (Request $req)
             return redirect()->route('admin.blogs');
         }
 })->name('admin.blogs.create');
-
-Route::get('/testing',function (){
-    return \App\Event::paginate(2);   
-});

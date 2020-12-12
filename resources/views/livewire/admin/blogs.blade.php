@@ -37,6 +37,7 @@
                         </svg>
                     </div>
                     Blogs
+                    <span class="text-green-700 ml-3 text-sm">({{\App\Guide::count()}})</span>
                     <div wire:loading class="h-8 w-8 animate-spin text-green-700 ml-3">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -53,10 +54,18 @@
                 </button>
             </div>
         </div>
+        <div class="flex">
+            <div class="w-1/2 bg-white p-3 m-4 mb-0 focus:outline-none flex items-center">
+                <div class="h-5 w-5 mr-2">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <input type="text" class="outline-none w-full" wire:model="search" name=""  id="" placeholder="Search">
+            </div>
+        </div>
         {{-- All Blogs --}}
         <div class="p-4 m-4">
             <div class="flex flex-wrap">
-                @foreach(\App\Guide::orderBy('id','desc')->get() as $blog)
+                @foreach($blogs as $blog)
                 <div class="w-1/1 md:w-1/4 p-2">
                     <div class="bg-white p-3 rounded-lg">
                         <h1 class="text-lg">
@@ -90,6 +99,7 @@
                     </div>
                 </div>
                 @endforeach
+                {{$blogs->links("pagination-links")}}
             </div> 
         </div>
         <script src="{{asset('js/alpine.min.js')}}"></script>
