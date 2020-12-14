@@ -2,27 +2,27 @@
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 
 // Users Route
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('landing');
+Route::view('/', 'welcome')->name('landing');
 
-Route::get('/register', function () {
-    return view('user.register');
-})->name('user.register');
+Route::view('/register', 'user.register')->name('user.register');
 
-Route::get('/login', function () {
-    return view('user.login');
-})->name('user.login');
+Route::view('/login', 'user.login')->name('user.login');
 
 Route::get('/home', function () {
     return view('user.home');
-})->name('user.home');
+})->name('user.home')->middleware('auth');
 
+Route::get('/logout',function ()
+{
+    Auth::logout();
+    return redirect(route('landing')); 
+})->name("logout");
 
 // Admin Route
 

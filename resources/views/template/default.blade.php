@@ -32,10 +32,12 @@
             }
         </style>
         @yield('style')
+        @livewireStyles
     </head>
     <body>
         @yield('content')
         <script src="js/jquery.js"></script>
         @yield('script')
+        @livewireScripts
     </body>
 </html>

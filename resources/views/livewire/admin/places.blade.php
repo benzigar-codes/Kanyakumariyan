@@ -309,20 +309,36 @@
             </div>
         </div> --}}
         <div class="bg-white m-4 p-3 flex flex-wrap">
-        	<div class="bg-white rounded-lg shadow-lg w-full overflow-hidden border-4 border-black md:w-1/4 relative">
-        		<div class="position flex top-0 right-0 w-10">
-        			<p>Yes</p>
-        		</div>
-                <img class="h-64 w-full object-cover" src="{{asset('images/kk.jpeg')}}" alt="">
-                <a href="">
-                	<div class="flex">
-                    <div class="w-full bg-green-800 text-white p-4">
-                        <h1 class="text-lg font-bold">Kanyakumari beach</h1>
-                        <p class="text-sm text-green-300">Kanyakumari . 629001</p>
-                  </div>
-                </div>
-                </a>
+            @php
+                $places=[
+                    [
+                        "name" => "Kanyakumari",
+                        "location" => "Colachel"
+                    ],
+                    [
+                        "name" => "Mandaikadu",
+                        "location" => "Karungal"
+                    ]
+                ];
+            @endphp
+            @foreach($places as $place)
+        	<div class="w-full md:w-1/4 p-3">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-4 border-black relative">
+                    <div class="position flex top-0 right-0 w-10">
+                        <p>Yes</p>
+                    </div>
+                    <img class="h-64 w-full object-cover" src="{{asset('images/kk.jpeg')}}" alt="">
+                    <a href="">
+                        <div class="flex">
+                        <div class="w-full bg-green-800 text-white p-4">
+                            <h1 class="text-lg font-bold">{{$place["name"]}}</h1>
+                            <p class="text-sm text-green-300">{{$place["location"]}} . 629001</p>
+                      </div>
+                    </div>
+                    </a>
+                </div>   
             </div>
+            @endforeach
         </div>
         <script src="{{asset('js/alpine.min.js')}}"></script>
     </div>

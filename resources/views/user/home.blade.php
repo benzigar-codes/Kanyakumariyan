@@ -3,5 +3,7 @@
 @section('title','Kanyakumariyan')
 
 @section('content')
-	<h1>Hello world</h1>
+	@auth
+	<h1>Hello world {{auth()->id()}}</h1>
+	@endauth
 @endsection
