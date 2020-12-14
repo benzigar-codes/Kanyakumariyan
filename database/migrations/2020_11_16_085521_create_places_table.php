@@ -19,6 +19,7 @@ class CreatePlacesTable extends Migration
             $table->text('description');
             $table->string('image')->nullable();
             $table->string('location');
+            $table->text('google_map')->nullable();
             $table->integer('priority')->default(1);
             $table->integer('pincode');
             $table->timestamps();

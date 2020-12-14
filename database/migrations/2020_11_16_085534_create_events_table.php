@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->string('image')->nullable();
             $table->timestamp('date');
             $table->string('location');
-            $table->string('google_map')->nullable();
+            $table->text('google_map')->nullable();
             $table->integer('pincode');
             $table->timestamps();
         });

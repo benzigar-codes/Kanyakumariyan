@@ -4,16 +4,19 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 
 class Places extends Component
 {
+	use WithPagination;
+	use WithFileUploads;
 	public $search;
 	public $orderBy,$order;
 	public $step,$editStep;
 	public $add,$edit;
 	public $editId;
 	public $message;
-	public $addName,$addDesc,$addimage,$addLocation,$addPriority,$addPincode;
+	public $addName,$addDesc,$addimage,$addLocation,$addImage,$addPriority,$addPincode;
 	public $editName,$editDesc,$editimage,$editLocation,$editPriority,$editPincode;
 	use WithPagination;
 	public function mount()
@@ -55,28 +58,28 @@ class Places extends Component
 	}
 	public function addPlace()
 	{
-		if($this->addTitle == '' || $this->addDesc == '' || $this->addDate == '' || $this->addLocation == '' || $this->addPincode == '')
+		if($this->addName == '' || $this->addDesc == '' || $this->addDate == '' || $this->addLocation == '' || $this->addPincode == '')
 		{
 			$this->message = "Enter the required fields";
 			return;
 		}
 		else{
-			$event = new \App\Event;
-			$event->title=$this->addTitle;
-			$event->description=$this->addDesc;
-			$event->date=$this->addDate;
-			$event->location=$this->addLocation;
-			$event->pincode=$this->addPincode;
-			$event->google_map=($this->addGoogle == '') ? NULL : $this->addGoogle;
-			$event->save();
-			$this->addTitle='';
-			$this->addDesc='';
-			$this->addDate='';
-			$this->addLocation='';
-			$this->addPincode='';
-			$this->addGoogle='';
-			$this->page=1;
-			$this->hideAdd();
+			// $event = new \App\Event;
+			// $event->title=$this->addTitle;
+			// $event->description=$this->addDesc;
+			// $event->date=$this->addDate;
+			// $event->location=$this->addLocation;
+			// $event->pincode=$this->addPincode;
+			// $event->google_map=($this->addGoogle == '') ? NULL : $this->addGoogle;
+			// $event->save();
+			// $this->addTitle='';
+			// $this->addDesc='';
+			// $this->addDate='';
+			// $this->addLocation='';
+			// $this->addPincode='';
+			// $this->addGoogle='';
+			// $this->page=1;
+			// $this->hideAdd();
 		}
 	}
 	public function updateEvent()
@@ -99,7 +102,7 @@ class Places extends Component
 	public function nextStep()
 	{
 		$this->message = '';
-		if($this->addTitle == '' || $this->addDesc == '')
+		if($this->addName == '' || $this->addDesc == '')
 		{
 			$this->message = "Enter the required fields";
 			return;

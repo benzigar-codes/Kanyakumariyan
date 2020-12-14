@@ -1,6 +1,6 @@
 <div x-data="{loading:false}">
     @if($add || $edit)
-    <div class="absolute inset-0 bg-green-800 opacity-75 z-5">
+    <div class="absolute inset-0 bg-green-800 opacity-75 z-10">
         
     </div>
     @endif
@@ -14,9 +14,9 @@
     </div>
     {{-- Add Place --}}
     @if($add)
-    <div class="absolute inset-0 flex justify-center items-center z-5">
+    <div class="absolute inset-0 flex justify-center items-center z-10">
         <form wire:submit.prevent="addPlace()" method="post" class="bg-white p-4 shadow-lg rounded-lg flex flex-col space-y-3" style="width:400px" enctype="multipart/form-data">
-        	<div class="flex justify-between items-center">
+        	<div class="flex justify-between items-center z-10">
         		<h1 class="font-bold text-3xl text-green-700">Add a new Place</h1>
         		<div wire:click="hideAdd" class="h-5 w-5 text-green-700 cursor-pointer">
         			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,16 +45,6 @@
         	@endif
         	{{-- step 2 --}}
         	@if($step == 2)
-        		{{-- Date --}}
-	        	<div class="flex">
-	        		<button class="h-5 w-5 text-green-700 mr-2">
-		        		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-						</svg>
-		        	</button>
-					<p>Choose the date of the event : <span class="text-red-600">*</span></p>
-	        	</div>
-	      		<input type="datetime-local" wire:model="addDate" name="title" class="bg-gray-200 p-2" id="">
 	      		{{-- Location --}}
 	      		<div class="flex">
 	        		<button class="h-5 w-5 text-green-700 mr-2">
@@ -86,6 +76,15 @@
 					<p>Pincode (Important, Should be correct) : <span class="text-red-600">*</span></p>
 	        	</div>
 	      		<input type="number" wire:model="addPincode" name="title" class="bg-gray-200 p-2" id="">
+                {{-- Image --}}
+                @if($addImage)
+                <label @click.prevent="" for="image" class="border-4 p-2 border-green-800">Upload an Image</label>
+                @else($addImage)
+                <button class="border-4 p-2 border-green-800">
+                   Image Loaded
+                </button>
+                @endif
+                <input type="file" class="hidden" name="image" wire:model="addImage" id="image">
 	      		{{-- Buttons --}}
 	      		<div class="flex space-x-3">
 	      			<button wire:click.prevent="prevStep()" class="border-4 p-2 hover:bg-gray-200 w-1/2">
@@ -308,7 +307,7 @@
                  @endif
             </div>
         </div> --}}
-        <div class="bg-white m-4 p-3 flex flex-wrap">
+        <div class="bg-white m-4 p-3 flex flex-wrap z-2">
             @php
                 $places=[
                     [
@@ -322,10 +321,25 @@
                 ];
             @endphp
             @foreach($places as $place)
-        	<div class="w-full md:w-1/4 p-3">
+        	<div class="w-full md:w-1/4 p-3 z-1">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden border-4 border-black relative">
-                    <div class="position flex top-0 right-0 w-10">
-                        <p>Yes</p>
+                    <div class="absolute flex top-0 left-0 w-10 m-2">
+                        <button class="bg-gray-200 hover:bg-gray-300 px-3 p-2 text-black w-full flex items-center focus:outline-none flex justify-center items-center mr-2">
+                            <div class="h-5 w-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="absolute flex top-0 right-0 w-10 m-2">
+                        <button class="bg-red-600 px-3 p-2 text-white w-full hover:bg-red-700 flex items-center focus:outline-none flex justify-center items-center">
+                            <div class="h-5 w-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                </svg>
+                            </div>
+                        </button>
                     </div>
                     <img class="h-64 w-full object-cover" src="{{asset('images/kk.jpeg')}}" alt="">
                     <a href="">
