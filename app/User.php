@@ -28,6 +28,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function scopeRegisteredToday($query)
+    {
+        return $query->whereBetween("created_at",[\Carbon\Carbon::today(),\Carbon\Carbon::tomorrow()])->count();
+    }
+
+    public function scopeGetPosts($query,$id)
+    {
+        $posts=\App\User::where("id",$id)->first();
+        return $posts;
+    }
+
     /**
      * The attributes that should be cast to native types.
      *

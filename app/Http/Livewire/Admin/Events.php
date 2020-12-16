@@ -132,7 +132,7 @@ class Events extends Component
 		        	->orWhere('id',$this->search)
 		        	->orWhere('location',"like","%".$this->search."%")
 		        	->orWhere('date',"like","%".$this->search."%")
-		        	->orWhere('pincode',$this->search)
+		        	->orWhere('pincode',"like","%".$this->search."%")
 		        	->orderBy($this->orderBy,$this->order)
 		        	->paginate(5)
 		        ]);

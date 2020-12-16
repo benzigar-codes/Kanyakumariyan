@@ -16,8 +16,8 @@
                 </div>
                 <hr class="my-3">
                 <ul>
-                    <li class="font-bold text-xl">Total : <span class="text-2xl">32</span></li>
-                    <li class="font-bold text-xl">Today : <span class="text-2xl">10 <span class="text-gray-500">(new)</span></span></li>
+                    <li class="font-bold text-xl">Total : <span class="text-2xl">{{\App\User::count()}}</span></li>
+                    <li class="font-bold text-xl">Today : <span class="text-2xl">{{\App\User::registeredToday() }} <span class="text-gray-500">(new)</span></span></li>
                 </ul>
             </div>
         </div>
